@@ -3,7 +3,6 @@ title: Claude Code 功能概览
 date: 2026-07-12
 tags:
   - Claude
-  - CLI
   - AI编程
 categories:
   - AI工具
