@@ -104,7 +104,7 @@ iconfont: //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
 # 页头
 #---------------------------
 navbar:
-  blog_title: "Fluid"
+  blog_title: "Qi's bolg"
   ground_glass:
     enable: false
     px: 3
