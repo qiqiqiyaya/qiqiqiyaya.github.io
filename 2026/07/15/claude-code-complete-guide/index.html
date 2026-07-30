@@ -16,26 +16,27 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="youli">
+  <meta name="author" content="Qi">
   <meta name="keywords" content="">
   
-    <meta name="description" content="快捷命令 功能说明    Shift + Tab 在计划模式、默认模式和自动编辑模式这三种权限模式之间循环切换 ¹ 。   ! (感叹号) + 命令 进入 bash 模式，直接在电脑上运行终端命令，而不是作为对话发给 Claude Code ² 。   # + 输入 直接说你想让 claude 记住什么   Ctrl + B 当终端被运行的项目阻塞时，将该进程放到后台运行，以便继续对话 ²">
+    <meta name="description" content="Claude Code 内置 50+ 命令，本文一页速查，覆盖所有斜杠命令、CLI 标志和快捷键。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Claude Code 功能概览">
-<meta property="og:url" content="http://example.com/2026/07/12/claude-code-intro/index.html">
+<meta property="og:title" content="Claude Code 命令速查指南">
+<meta property="og:url" content="https://qiqiqiyaya.github.io/2026/07/15/claude-code-complete-guide/index.html">
 <meta property="og:site_name" content="Qi&#39;s bolg">
-<meta property="og:description" content="快捷命令 功能说明    Shift + Tab 在计划模式、默认模式和自动编辑模式这三种权限模式之间循环切换 ¹ 。   ! (感叹号) + 命令 进入 bash 模式，直接在电脑上运行终端命令，而不是作为对话发给 Claude Code ² 。   # + 输入 直接说你想让 claude 记住什么   Ctrl + B 当终端被运行的项目阻塞时，将该进程放到后台运行，以便继续对话 ²">
+<meta property="og:description" content="Claude Code 内置 50+ 命令，本文一页速查，覆盖所有斜杠命令、CLI 标志和快捷键。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-07-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-28T15:01:59.080Z">
-<meta property="article:author" content="youli">
+<meta property="article:published_time" content="2026-07-14T17:30:00.000Z">
+<meta property="article:modified_time" content="2026-07-28T15:16:42.890Z">
+<meta property="article:author" content="Qi">
 <meta property="article:tag" content="AI编程">
 <meta property="article:tag" content="Claude">
+<meta property="article:tag" content="开发工具">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Claude Code 功能概览 - Qi&#39;s bolg</title>
+  <title>Claude Code 命令速查指南 - Qi&#39;s bolg</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -73,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"qiqiqiyaya.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -304,7 +305,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Claude Code 功能概览"></span>
+            <span id="subtitle" data-typed-text="Claude Code 命令速查指南"></span>
           
         </div>
 
@@ -314,14 +315,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        youli
+        Qi
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-07-12 00:00" pubdate>
-          2026年7月12日 凌晨
+        <time datetime="2026-07-15 01:30" pubdate>
+          2026年7月15日 凌晨
         </time>
       </span>
     
@@ -332,7 +333,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          2k 字
         
       </span>
     
@@ -343,7 +344,7 @@
         
         
         
-          9 分钟
+          17 分钟
         
       </span>
     
@@ -382,107 +383,302 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Claude Code 功能概览</h1>
+            <h1 id="seo-header">Claude Code 命令速查指南</h1>
             
             
               <div class="markdown-body">
                 
-                <table>
+                <p>Claude Code 内置 50+ 命令，本文一页速查，覆盖所有斜杠命令、CLI 标志和快捷键。</p>
+<span id="more"></span>
+
+<h2 id="三种命令形态"><a href="#三种命令形态" class="headerlink" title="三种命令形态"></a>三种命令形态</h2><p><strong>CLI 命令</strong>（终端启动）：<code>claude</code>、<code>claude -c</code>、<code>claude --print &quot;问题&quot;</code></p>
+<p><strong>斜杠命令</strong>（会话内 <code>/</code>）：<code>/init</code>、<code>/compact</code>、<code>/model</code></p>
+<p><strong>键盘快捷键</strong>（直接生效）：<code>Ctrl+C</code> 取消、<code>Ctrl+R</code> 搜索历史、<code>Shift+Tab</code> 切换模式</p>
+<hr>
+<h2 id="核心命令（10-个）"><a href="#核心命令（10-个）" class="headerlink" title="核心命令（10 个）"></a>核心命令（10 个）</h2><table>
 <thead>
 <tr>
-<th align="left">快捷命令</th>
-<th align="left">功能说明</th>
+<th>命令</th>
+<th>功能</th>
+<th>用法</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">Shift + Tab</td>
-<td align="left">在计划模式、默认模式和自动编辑模式这三种权限模式之间循环切换 ¹ 。</td>
+<td><code>/init</code></td>
+<td>创建 CLAUDE.md 项目记忆</td>
+<td><code>/init</code></td>
 </tr>
 <tr>
-<td align="left">! (感叹号) + 命令</td>
-<td align="left">进入 bash 模式，直接在电脑上运行终端命令，而不是作为对话发给 Claude Code ² 。</td>
+<td><code>/compact</code></td>
+<td>压缩上下文回收空间</td>
+<td><code>/compact</code> 或 <code>/compact retain 关键内容</code></td>
 </tr>
 <tr>
-<td align="left"># + 输入</td>
-<td align="left">直接说你想让 claude 记住什么</td>
+<td><code>/clear</code></td>
+<td>硬重置，清除对话历史</td>
+<td><code>/clear</code></td>
 </tr>
 <tr>
-<td align="left">Ctrl + B</td>
-<td align="left">当终端被运行的项目阻塞时，将该进程放到后台运行，以便继续对话 ² ³ 。</td>
+<td><code>/model</code></td>
+<td>切换模型</td>
+<td><code>/model opus|sonnet|haiku</code></td>
 </tr>
 <tr>
-<td align="left">Option + Enter (Mac) <br> Ctrl + Enter (Win)</td>
-<td align="left">在输入框中进行文本换行（直接按 Enter 会发送消息） ⁴ 。</td>
+<td><code>/cost</code></td>
+<td>查看 Token 消耗和费用</td>
+<td><code>/cost</code></td>
 </tr>
 <tr>
-<td align="left">Ctrl + V</td>
-<td align="left">将图片粘贴到对话框中（注意在 Mac 上也是使用 Ctrl+V） ⁴ 。</td>
+<td><code>/context</code></td>
+<td>查看上下文用量百分比</td>
+<td><code>/context</code></td>
 </tr>
 <tr>
-<td align="left">&#x2F;help</td>
-<td align="left">查看所有可用的斜杠命令以及它们背后的思想 ⁵ 。</td>
+<td><code>/diff</code></td>
+<td>查看当前会话代码更改</td>
+<td><code>/diff</code> 或 <code>/diff src/file.ts</code></td>
 </tr>
 <tr>
-<td align="left">&#x2F;model</td>
-<td align="left">切换不同档位（高、中、低）的大模型 ⁵ 。</td>
+<td><code>/help</code></td>
+<td>列出所有可用命令</td>
+<td><code>/help</code></td>
 </tr>
 <tr>
-<td align="left">&#x2F;btw + 问题</td>
-<td align="left">询问与当前项目无关的问题，回答会与原对话的上下文隔离，按 ESC 退出后不占用上下文 ⁵ 。</td>
+<td><code>/memory</code></td>
+<td>编辑 CLAUDE.md</td>
+<td><code>/memory</code>，<code># 规则</code> 快速追加</td>
 </tr>
 <tr>
-<td align="left">&#x2F;simplify</td>
-<td align="left">这是一个内置 skill，会派生三个 agent 从代码质量、运行效率和是否可用三个角度做代码审核与自动优化 ⁵ ⁶ 。</td>
-</tr>
-<tr>
-<td align="left">连接两下 ESC 或 <br> &#x2F;rewind</td>
-<td align="left">调出撤回&#x2F;回滚界面，可以快捷撤销 Claude Code 刚刚编辑过的文件和对话 ⁶ ⁷ 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;compact</td>
-<td align="left">主动压缩上下文，保留关键信息并释放大部分上下文空间，省 token 且让模型更专注 ⁸ 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;clear</td>
-<td align="left">彻底清空当前上下文，相当于重新开启一个新的对话 ⁸ 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;cost</td>
-<td align="left">详细展示当前上下文的占比，包括各个 MCP 和 skill 占用的 token 数量 ⁸ 。</td>
-</tr>
-<tr>
-<td align="left">连接两次 Ctrl + C</td>
-<td align="left">退出 Claude Code 的对话 ⁹ 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;resume</td>
-<td align="left">调出历史记录，选择并恢复到之前的某一次对话 ⁹ 。</td>
-</tr>
-<tr>
-<td align="left">claude -</td>
-<td align="left">启动时在命令后加空格和横杠，代表 Continue，直接继续上一次的对话 ⁹ 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;init</td>
-<td align="left">初始化整个项目，自动扫描项目架构并将信息写入项目级的 claude.md 文件中 ¹⁰ 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;memory</td>
-<td align="left">打开记忆选项，可以选择编辑全局或项目级的 claude.md ¹¹ ，也可以用来开启自动记忆 (Auto memory) 功能 ¹² 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;技能名称</td>
-<td align="left">手动调用特定的 skill（例如输入 &#x2F;frontend 调用前端优化技能） ¹³ 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;agent</td>
-<td align="left">进入引导流程，手动创建子 agent (subagent) 去执行并行任务 ¹⁴ 。</td>
-</tr>
-<tr>
-<td align="left">&#x2F;plugin</td>
-<td align="left">进入插件管理页面，可以发现新插件或管理已安装的插件 ¹⁵ ¹⁶ 。</td>
+<td><code>/resume</code></td>
+<td>恢复历史会话</td>
+<td><code>/resume</code> 或 <code>claude --resume</code></td>
 </tr>
 </tbody></table>
+<p><strong>模型选择：</strong> Sonnet 日常编码 → Opus 复杂任务 → Haiku 简单操作</p>
+<p><strong>黄金规则：</strong> 上下文 70-80% 就主动 <code>/compact</code>，别等到 95%。</p>
+<hr>
+<h2 id="进阶命令（10-个）"><a href="#进阶命令（10-个）" class="headerlink" title="进阶命令（10 个）"></a>进阶命令（10 个）</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/btw</code></td>
+<td>不打断上下文提问</td>
+<td><code>/btw 问题内容</code></td>
+</tr>
+<tr>
+<td><code>/fast</code></td>
+<td>极速模式（速度优先）</td>
+<td><code>/fast</code> 切换</td>
+</tr>
+<tr>
+<td><code>/plan</code></td>
+<td>计划模式（审批后执行）</td>
+<td><code>Shift+Tab</code> 或 <code>/plan</code></td>
+</tr>
+<tr>
+<td><code>/fork</code></td>
+<td>临时分支探索想法</td>
+<td><code>/fork</code></td>
+</tr>
+<tr>
+<td><code>/rewind</code></td>
+<td>撤销对话&#x2F;代码</td>
+<td><code>Esc Esc</code> 打开菜单</td>
+</tr>
+<tr>
+<td><code>/todos</code></td>
+<td>持久化任务列表</td>
+<td><code>Ctrl+T</code> 切换显示</td>
+</tr>
+<tr>
+<td><code>/simplify</code></td>
+<td>代码审查</td>
+<td><code>/simplify</code></td>
+</tr>
+<tr>
+<td><code>/output-style</code></td>
+<td>调整响应风格</td>
+<td><code>/output-style</code></td>
+</tr>
+<tr>
+<td><code>/permissions</code></td>
+<td>管理自动审批</td>
+<td><code>/permissions</code></td>
+</tr>
+</tbody></table>
+<p><strong>子 Agent 调用方式：</strong></p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>直接委派</td>
+<td><code>请用 doc-maintainer 检查文档一致性</code></td>
+</tr>
+<tr>
+<td>指定 Agent 名称</td>
+<td><code>请用 code-reviewer 审查最近的改动</code></td>
+</tr>
+<tr>
+<td><code>/</code> 命令前缀</td>
+<td>直接输入 <code>/agent-name</code> 调用</td>
+</tr>
+</tbody></table>
+<p><strong>三种模式：</strong> Normal（每次确认）→ Auto-Accept（自动执行）→ Plan（只读方案）</p>
+<p><strong>关键点</strong>：只要在对话中明确说”用 XX agent 做 YY”，我就会在<strong>后台启动它，主线对话不受影响</strong>。完成后你会收到 <task-notification> 通知，我会把结果摘要告诉你。</p>
+<hr>
+<h2 id="CLI-启动选项"><a href="#CLI-启动选项" class="headerlink" title="CLI 启动选项"></a>CLI 启动选项</h2><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>claude --print &quot;问题&quot;</code></td>
+<td>一次性查询，不进入交互</td>
+</tr>
+<tr>
+<td><code>claude -c</code></td>
+<td>恢复当前目录最近会话</td>
+</tr>
+<tr>
+<td><code>claude --from-pr 123</code></td>
+<td>从 PR 恢复会话</td>
+</tr>
+<tr>
+<td><code>--append-system-prompt &quot;...&quot;</code></td>
+<td>追加自定义系统指令（推荐）</td>
+</tr>
+<tr>
+<td><code>--system-prompt &quot;...&quot;</code></td>
+<td>替换全部系统指令（危险）</td>
+</tr>
+<tr>
+<td><code>--dangerously-skip-permissions</code></td>
+<td>跳过所有权限确认（仅限容器）</td>
+</tr>
+<tr>
+<td><code>--output-format json</code></td>
+<td>JSON 格式输出</td>
+</tr>
+<tr>
+<td><code>--agents &#39;{...}&#39;</code></td>
+<td>启动时预定义子 Agent</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="键盘快捷键"><a href="#键盘快捷键" class="headerlink" title="键盘快捷键"></a>键盘快捷键</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl+C</code></td>
+<td>取消当前生成</td>
+</tr>
+<tr>
+<td><code>Ctrl+R</code></td>
+<td>搜索命令历史</td>
+</tr>
+<tr>
+<td><code>Shift+Tab</code></td>
+<td>切换模式</td>
+</tr>
+<tr>
+<td><code>Esc Esc</code></td>
+<td>回退菜单</td>
+</tr>
+<tr>
+<td><code>Ctrl+T</code></td>
+<td>任务列表</td>
+</tr>
+<tr>
+<td><code>Alt+M</code></td>
+<td>切换模式（同 Shift+Tab）</td>
+</tr>
+<tr>
+<td><code>Alt+P</code></td>
+<td>上一条消息</td>
+</tr>
+<tr>
+<td><code>Alt+N</code></td>
+<td>下一条消息</td>
+</tr>
+<tr>
+<td><code>Alt+B</code></td>
+<td>后退对话</td>
+</tr>
+<tr>
+<td><code>Alt+F</code></td>
+<td>前进对话</td>
+</tr>
+<tr>
+<td><code>Shift+Enter</code></td>
+<td>多行输入</td>
+</tr>
+<tr>
+<td><code>@ + 路径</code></td>
+<td>文件自动补全</td>
+</tr>
+<tr>
+<td><code>! + 命令</code></td>
+<td>直接执行 bash</td>
+</tr>
+<tr>
+<td><code># + 文字</code></td>
+<td>添加到记忆中</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="隐藏功能"><a href="#隐藏功能" class="headerlink" title="隐藏功能"></a>隐藏功能</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/vim</code></td>
+<td>启用 Vim 键位绑定</td>
+</tr>
+<tr>
+<td><code>/remote-control</code></td>
+<td>通过 claude.ai 远程控制本地会话</td>
+</tr>
+<tr>
+<td><code>/export</code></td>
+<td>导出会话为可搜索文档</td>
+</tr>
+<tr>
+<td><code>/usage-report</code></td>
+<td>生成月度使用报告</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="典型工作流"><a href="#典型工作流" class="headerlink" title="典型工作流"></a>典型工作流</h2><p><strong>功能开发：</strong> <code>/init</code> → <code>/memory</code> → 实现 → <code>/diff</code> → <code>! npm test</code> → <code>/cost</code> → 提交</p>
+<p><strong>调试修复：</strong> <code>claude -c</code> → 贴错误 → <code>/btw</code> 穿插提问 → 修复 → <code>/diff</code> → 测试 → <code>/compact</code></p>
+<p><strong>大型重构：</strong> <code>Shift+Tab</code> 切 Plan 模式 → 描述需求 → 审批 → <code>/context</code> 监控 → 70% 时 <code>/compact</code> → <code>/diff</code> + <code>/simplify</code> → <code>/export</code></p>
+<hr>
+<h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><ol>
+<li>掌握核心 <code>/init、/compact、/clear、/model、/cost、/context、/diff、/help、/memory、/resume</code> 10 个命令就能覆盖 90% 日常场景</li>
+<li><strong><code>/btw</code></strong> 不打断上下文提问，改变操作习惯</li>
+<li>主动 <code>/compact</code>，不要被动等满</li>
+<li><code>CLAUDE.md</code> 一次配好，每次会话省 10-15 分钟</li>
+<li>定期 <code>/cost</code> 和 <code>/help</code> 保持对工具的控制力</li>
+<li>&#x2F;export 将问题解决过程变成可复用的文档</li>
+<li>子 Agent 承担专项工作，主对话保持干净</li>
+</ol>
 
                 
               </div>
@@ -520,6 +716,8 @@
       
         <a href="/tags/AI%E7%BC%96%E7%A8%8B/" class="print-no-link">#AI编程</a>
       
+        <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="print-no-link">#开发工具</a>
+      
     </div>
   
 </div>
@@ -530,20 +728,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Claude Code 功能概览</div>
-      <div>http://example.com/2026/07/12/claude-code-intro/</div>
+      <div>Claude Code 命令速查指南</div>
+      <div>https://qiqiqiyaya.github.io/2026/07/15/claude-code-complete-guide/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>youli</div>
+          <div>Qi</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年7月12日</div>
+          <div>2026年7月15日</div>
         </div>
       
       
@@ -575,9 +773,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/07/28/hello-world/" title="Hello World">
+                      <a href="/2026/07/28/eec-using-explain/" title="Everything Claude Code (ECC) — 代理指令完全指南">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
+                        <span class="hidden-mobile">Everything Claude Code (ECC) — 代理指令完全指南</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
