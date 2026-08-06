@@ -27,7 +27,7 @@
 <meta property="og:description" content="Claude Code 内置 50+ 命令，本文一页速查，覆盖所有斜杠命令、CLI 标志和快捷键。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-14T17:30:00.000Z">
-<meta property="article:modified_time" content="2026-07-28T15:16:42.890Z">
+<meta property="article:modified_time" content="2026-08-06T14:57:31.015Z">
 <meta property="article:author" content="Qi">
 <meta property="article:tag" content="AI编程">
 <meta property="article:tag" content="Claude">
@@ -333,7 +333,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          3.2k 字
         
       </span>
     
@@ -344,7 +344,7 @@
         
         
         
-          17 分钟
+          27 分钟
         
       </span>
     
@@ -457,7 +457,7 @@
 <p><strong>模型选择：</strong> Sonnet 日常编码 → Opus 复杂任务 → Haiku 简单操作</p>
 <p><strong>黄金规则：</strong> 上下文 70-80% 就主动 <code>/compact</code>，别等到 95%。</p>
 <hr>
-<h2 id="进阶命令（10-个）"><a href="#进阶命令（10-个）" class="headerlink" title="进阶命令（10 个）"></a>进阶命令（10 个）</h2><table>
+<h2 id="进阶命令（9-个）"><a href="#进阶命令（9-个）" class="headerlink" title="进阶命令（9 个）"></a>进阶命令（9 个）</h2><table>
 <thead>
 <tr>
 <th>命令</th>
@@ -670,16 +670,19 @@
 <p><strong>调试修复：</strong> <code>claude -c</code> → 贴错误 → <code>/btw</code> 穿插提问 → 修复 → <code>/diff</code> → 测试 → <code>/compact</code></p>
 <p><strong>大型重构：</strong> <code>Shift+Tab</code> 切 Plan 模式 → 描述需求 → 审批 → <code>/context</code> 监控 → 70% 时 <code>/compact</code> → <code>/diff</code> + <code>/simplify</code> → <code>/export</code></p>
 <hr>
-<h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><ol>
-<li>掌握核心 <code>/init、/compact、/clear、/model、/cost、/context、/diff、/help、/memory、/resume</code> 10 个命令就能覆盖 90% 日常场景</li>
-<li><strong><code>/btw</code></strong> 不打断上下文提问，改变操作习惯</li>
-<li>主动 <code>/compact</code>，不要被动等满</li>
-<li><code>CLAUDE.md</code> 一次配好，每次会话省 10-15 分钟</li>
-<li>定期 <code>/cost</code> 和 <code>/help</code> 保持对工具的控制力</li>
-<li>&#x2F;export 将问题解决过程变成可复用的文档</li>
-<li>子 Agent 承担专项工作，主对话保持干净</li>
-</ol>
-
+<h2 id="🎯-在-Agent-面板中切换与操作"><a href="#🎯-在-Agent-面板中切换与操作" class="headerlink" title="🎯 在 Agent 面板中切换与操作"></a>🎯 在 Agent 面板中切换与操作</h2><p>在 Agent 面板（<code>claude agents</code>）的主界面中，你可以通过以下方式选择和切换不同的 Agent 会话：</p>
+<ul>
+<li><strong>选择与查看</strong>：使用键盘的 <strong><code>↑</code>（上）</strong> 和 <strong><code>↓</code>（下）</strong> 方向键来选择不同的 Agent 会话。</li>
+<li><strong>快速回复（不进入会话）</strong>：选中一个会话后，按下 <strong><code>Space</code>（空格键）</strong>，可以直接在面板中回复该 Agent，无需进入完整对话界面。</li>
+<li><strong>进入完整会话</strong>：在选中的会话上按 <strong><code>Enter</code></strong> 或 <strong><code>→</code>（右方向键）</strong>，即可进入该 Agent 的完整对话模式。</li>
+<li><strong>返回主面板</strong>：在 Agent 的子会话或完整对话中，按 <strong><code>←</code>（左方向键）</strong> 可以返回 Agent 主面板。</li>
+<li><strong>快速切换固定 Agent</strong>：使用 <strong><code>Alt + 1</code> 到 <code>Alt + 5</code></strong> 可以快速切换到第 1 到第 5 个被固定（Pinned）的 Agent。</li>
+</ul>
+<h2 id="⌨️-在普通会话中管理-Agent"><a href="#⌨️-在普通会话中管理-Agent" class="headerlink" title="⌨️ 在普通会话中管理 Agent"></a>⌨️ 在普通会话中管理 Agent</h2><p>如果你在一个普通的 Claude 会话中，想把它放到后台作为一个 Agent 管理，可以使用以下方式：</p>
+<ul>
+<li><strong>放入后台</strong>：在会话中输入 <strong><code>/bg</code></strong> 命令，当前会话就会被放到后台，并出现在 Agent 面板中。</li>
+</ul>
+<h2 id="实用的MCP"><a href="#实用的MCP" class="headerlink" title="实用的MCP"></a>实用的MCP</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;mcpServers&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;next-devtools&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;npx&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-string">&quot;-y&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;next-devtools-mcp@latest&quot;</span><br>            <span class="hljs-punctuation">]</span><br>        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;context7&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;npx&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-string">&quot;-y&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;@upstash/context7-mcp@latest&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;--api-key&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;i18nManager&quot;</span><br>            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;实时文档查询 — Next.js/React/Express 等库文档&quot;</span><br>        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;sequential-thinking&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;npx&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-string">&quot;-y&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;@modelcontextprotocol/server-sequential-thinking&quot;</span><br>            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;链式推理 — 复杂问题逐步分析&quot;</span><br>        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;filesystem&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;npx&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-string">&quot;-y&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;@modelcontextprotocol/server-filesystem&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;D:\\My Respository\\i18n-manager&quot;</span><br>            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;文件系统操作（已配置为本项目路径）&quot;</span><br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
                 
               </div>
             
