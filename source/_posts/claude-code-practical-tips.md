@@ -86,6 +86,17 @@ categories: 工具
                 "chrome"
             ],
             "description": "浏览器自动化与 E2E 测试"
+        },
+        "mcp-server-firecrawl": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "firecrawl-mcp"
+            ],
+            "env": {
+                "FIRECRAWL_API_KEY": "i18nManager"
+            },
+            "description": "提供访问web的能力"
         }
     }
 }
@@ -93,13 +104,13 @@ categories: 工具
 
 ### 各 MCP 用途一览
 
-| MCP Server | 用途 |
-|---|---|
-| `next-devtools` | Next.js 开发调试工具集成 |
-| `context7` | 实时查询前端框架/库最新文档 |
-| `sequential-thinking` | 复杂问题的逐步链式推理 |
-| `filesystem` | 安全读写项目文件 |
-| `playwright` | 浏览器自动化操作与 E2E 测试 |
+| MCP Server            | 用途                        |
+| --------------------- | --------------------------- |
+| `next-devtools`       | Next.js 开发调试工具集成    |
+| `context7`            | 实时查询前端框架/库最新文档 |
+| `sequential-thinking` | 复杂问题的逐步链式推理      |
+| `filesystem`          | 安全读写项目文件            |
+| `playwright`          | 浏览器自动化操作与 E2E 测试 |
 
 ---
 
