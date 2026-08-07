@@ -27,7 +27,7 @@
 <meta property="og:description" content="子代理（Subagent）的使用如何启动子代理？子代理就像在 Claude Code 中开启独立线程，不阻塞当前主对话线程。三种启动方式：  CLI 命令 — claude --agent {子代理名称}例：claude --agent captain（启动名为 captain 的子代理） @ 快捷引用 — @&quot;{子代理名称}&quot;例：@&quot;doc-updater&amp;quot">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-08-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-03T15:47:14.953Z">
+<meta property="article:modified_time" content="2026-08-07T14:18:25.867Z">
 <meta property="article:author" content="Qi">
 <meta property="article:tag" content="ai">
 <meta property="article:tag" content="claude-code">
@@ -333,7 +333,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          2.5k 字
         
       </span>
     
@@ -344,7 +344,7 @@
         
         
         
-          18 分钟
+          21 分钟
         
       </span>
     
@@ -438,6 +438,19 @@
 <li><strong>@ 引用</strong> — 熟练使用 <code>@&quot;agent-name&quot;</code> 语法快速调度子代理</li>
 <li><strong>结合 git 工作流</strong> — 用子代理做 pre-commit review、自动生成 commit message</li>
 </ol>
+<hr>
+<h2 id="🎯-在-Agent-面板中切换与操作"><a href="#🎯-在-Agent-面板中切换与操作" class="headerlink" title="🎯 在 Agent 面板中切换与操作"></a>🎯 在 Agent 面板中切换与操作</h2><p>在 Agent 面板（<code>claude agents</code>）的主界面中，你可以通过以下方式选择和切换不同的 Agent 会话：</p>
+<ul>
+<li><strong>选择与查看</strong>：使用键盘的 <strong><code>↑</code>（上）</strong> 和 <strong><code>↓</code>（下）</strong> 方向键来选择不同的 Agent 会话。</li>
+<li><strong>快速回复（不进入会话）</strong>：选中一个会话后，按下 <strong><code>Space</code>（空格键）</strong>，可以直接在面板中回复该 Agent，无需进入完整对话界面。</li>
+<li><strong>进入完整会话</strong>：在选中的会话上按 <strong><code>Enter</code></strong> 或 <strong><code>→</code>（右方向键）</strong>，即可进入该 Agent 的完整对话模式。</li>
+<li><strong>返回主面板</strong>：在 Agent 的子会话或完整对话中，按 <strong><code>←</code>（左方向键）</strong> 可以返回 Agent 主面板。</li>
+<li><strong>快速切换固定 Agent</strong>：使用 <strong><code>Alt + 1</code> 到 <code>Alt + 5</code></strong> 可以快速切换到第 1 到第 5 个被固定（Pinned）的 Agent。</li>
+</ul>
+<h2 id="⌨️-在普通会话中管理-Agent"><a href="#⌨️-在普通会话中管理-Agent" class="headerlink" title="⌨️ 在普通会话中管理 Agent"></a>⌨️ 在普通会话中管理 Agent</h2><p>如果你在一个普通的 Claude 会话中，想把它放到后台作为一个 Agent 管理，可以使用以下方式：</p>
+<ul>
+<li><strong>放入后台</strong>：在会话中输入 <strong><code>/bg</code></strong> 命令，当前会话就会被放到后台，并出现在 Agent 面板中。</li>
+</ul>
 
                 
               </div>
